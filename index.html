@@ -1,210 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>X Dev Product Menu</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>X Dev Product Menu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
 
-  <!-- Open Graph meta tags for Discord and social media previews -->
-  <meta property="og:title" content="X Dev Product Menu" />
-  <meta property="og:description" content="Professional Roblox scripts and executors — buy now via Discord!" />
-  <meta property="og:url" content="https://tekn1kshame.github.io/X-Dev-Menu/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://tekn1kshame.github.io/X-Dev-Menu/xshoppreview.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  body {
+    margin: 0; padding: 40px 20px;
+    background: #050505;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    display: flex; justify-content: center;
+  }
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="X Dev Product Menu" />
-  <meta name="twitter:description" content="Professional Roblox scripts and executors — buy now via Discord!" />
-  <meta name="twitter:image" content="https://tekn1kshame.github.io/X-Dev-Menu/xshoppreview.png" />
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    background: #0a0a0a;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 40px #00ffffaa;
+  }
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+  img.shop-preview {
+    display: block;
+    margin: 0 auto 30px;
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00ffffaa;
+  }
 
-    body {
-      margin: 0; padding: 40px 20px;
-      background: #050505;
-      color: #e0e0e0;
-      font-family: 'Roboto', sans-serif;
-      display: flex; justify-content: center;
-    }
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    color: #00ffff;
+    text-align: center;
+    margin: 0 0 10px;
+    text-shadow: 0 0 20px #00ffffaa;
+  }
 
-    .container {
-      max-width: 1000px;
-      width: 100%;
-      background: #0a0a0a;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 0 40px #00ffffaa;
-    }
+  .seller-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #00cccc;
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
-    .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 900;
-      font-size: 100px;
-      color: #00ffff;
-      text-align: center;
-      margin: 0 0 10px;
-      text-shadow: 0 0 20px #00ffffaa;
-    }
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+    color: #00ffffcc;
+  }
 
-    .seller-name {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 22px;
-      color: #00cccc;
-      text-align: center;
-      margin-bottom: 30px;
-    }
+  .products-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
 
-    .title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 38px;
-      text-align: center;
-      margin-bottom: 40px;
-      letter-spacing: 4px;
-      color: #00ffffcc;
-    }
+  .product {
+    flex: 0 0 280px;
+    background: #00111122;
+    border-radius: 16px;
+    padding: 30px 20px 35px;
+    border: 1px solid #00cccc88;
+    color: #a0ffffcc;
+    scroll-snap-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  .product:hover {
+    box-shadow: 0 0 20px #00ffffcc;
+  }
 
-    .products-wrapper {
-      display: flex;
-      overflow-x: auto;
-      gap: 30px;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 10px;
-    }
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
 
-    .product {
-      flex: 0 0 280px;
-      background: #00111122;
-      border-radius: 16px;
-      padding: 30px 20px 35px;
-      border: 1px solid #00cccc88;
-      color: #a0ffffcc;
-      scroll-snap-align: center;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease;
-      text-decoration: none;
-    }
-    .product:hover {
-      box-shadow: 0 0 20px #00ffffcc;
-    }
+  .product-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #00ffffcc;
+  }
 
-    .product-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 18px;
-    }
+  .product-price {
+    font-weight: 700;
+    font-size: 22px;
+    color: #ff6666cc;
+  }
 
-    .product-name {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 22px;
-      color: #00ffffcc;
-    }
+  .product-description {
+    font-size: 15px;
+    color: #99eeeecc;
+    margin-bottom: 28px;
+    line-height: 1.4;
+    white-space: pre-line;
+  }
 
-    .product-price {
-      font-weight: 700;
-      font-size: 22px;
-      color: #ff6666cc;
-    }
+  .buy-button {
+    background: linear-gradient(135deg, #00ffff, #0080ff);
+    border-radius: 30px;
+    padding: 14px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    box-shadow: 0 0 15px #00ffffbb;
+    user-select: none;
+    transition: transform 0.15s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    display: block;
+  }
+  .buy-button:hover {
+    box-shadow: 0 0 30px #00ffffee;
+    transform: scale(1.1);
+    color: #fff;
+  }
 
-    .product-description {
-      font-size: 15px;
-      color: #99eeeecc;
-      margin-bottom: 28px;
-      line-height: 1.4;
-      white-space: pre-line;
-    }
+  /* Suggestion box */
+  .suggestion-box {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ccccaa;
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-top: 50px;
+    color: #99ffffcc;
+  }
 
-    .buy-button {
-      background: linear-gradient(135deg, #00ffff, #0080ff);
-      border-radius: 30px;
-      padding: 14px 32px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: #000;
-      text-align: center;
-      box-shadow: 0 0 15px #00ffffbb;
-      user-select: none;
-      transition: transform 0.15s ease, box-shadow 0.25s ease;
-      text-decoration: none;
-      display: block;
-    }
-    .buy-button:hover {
-      box-shadow: 0 0 30px #00ffffee;
-      transform: scale(1.1);
-      color: #fff;
-    }
+  .suggestion-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #00ffffcc;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
 
-    /* Suggestion box */
-    .suggestion-box {
-      background-color: rgba(0, 255, 255, 0.1);
-      border: 1px solid #00ccccaa;
-      border-radius: 16px;
-      padding: 25px 30px;
-      margin-top: 50px;
-      color: #99ffffcc;
-    }
+  .suggestion-category {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #66ffffcc;
+  }
 
-    .suggestion-title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 26px;
-      color: #00ffffcc;
-      text-align: center;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
+  .suggestion-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 8px;
+    color: #aaffffcc;
+  }
+  .suggestion-list li {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
 
-    .suggestion-category {
-      font-weight: 700;
-      font-size: 18px;
-      margin-top: 15px;
-      color: #66ffffcc;
-    }
+  .important-notice {
+    background-color: rgba(255, 30, 30, 0.1);
+    border: 1.5px solid #ff1e1ecc;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-top: 50px;
+    color: #ff5555cc;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
 
-    .suggestion-list {
-      list-style: none;
-      padding-left: 0;
-      margin-top: 8px;
-      color: #aaffffcc;
-    }
-    .suggestion-list li {
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
-
-    .important-notice {
-      background-color: rgba(255, 30, 30, 0.1);
-      border: 1.5px solid #ff1e1ecc;
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin-top: 50px;
-      color: #ff5555cc;
-      font-size: 14px;
-      line-height: 1.5;
-      font-weight: 600;
-      font-family: 'Montserrat', sans-serif;
-      user-select: none;
-      text-align: center;
-      letter-spacing: 0.3px;
-    }
-
-    .terms {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #559999aa;
-      text-align: center;
-      font-style: italic;
-    }
-  </style>
+  .terms {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #559999aa;
+    text-align: center;
+    font-style: italic;
+  }
+</style>
 </head>
 <body>
   <div class="container" role="main" aria-label="Product menu by X Dev">
+    <img src="https://raw.githubusercontent.com/tekn1kshame/X-Dev-Menu/main/xshoppreview.png" alt="Shop Preview" class="shop-preview" />
     <div class="logo" aria-label="Logo X">X</div>
     <div class="seller-name">X Dev (Discord: freezesstrike)</div>
     <div class="title">PRODUCT MENU</div>
