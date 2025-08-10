@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>X Dev Product Menu</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
+  body {
+    margin: 0; padding: 40px 20px;
+    background: #050505;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    display: flex; justify-content: center;
+  }
+
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    background: #0a0a0a;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 40px #00ffffaa;
+  }
+
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    color: #00ffff;
+    text-align: center;
+    margin: 0 0 10px;
+    text-shadow: 0 0 20px #00ffffaa;
+  }
+
+  .seller-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #00cccc;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+    color: #00ffffcc;
+  }
+
+  .products-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  .product {
+    flex: 0 0 280px;
+    background: #00111122;
+    border-radius: 16px;
+    padding: 30px 20px 35px;
+    border: 1px solid #00cccc88;
+    color: #a0ffffcc;
+    scroll-snap-align: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    text-decoration: none;
+  }
+  .product:hover {
+    box-shadow: 0 0 20px #00ffffcc;
+  }
+
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .product-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #00ffffcc;
+  }
+
+  .product-price {
+    font-weight: 700;
+    font-size: 22px;
+    color: #ff6666cc;
+  }
+
+  .product-description {
+    font-size: 15px;
+    color: #99eeeecc;
+    margin-bottom: 28px;
+    line-height: 1.4;
+    white-space: pre-line;
+  }
+
+  .buy-button {
+    background: linear-gradient(135deg, #00ffff, #0080ff);
+    border-radius: 30px;
+    padding: 14px 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    box-shadow: 0 0 15px #00ffffbb;
+    user-select: none;
+    transition: transform 0.15s ease, box-shadow 0.25s ease;
+    text-decoration: none;
+    display: block;
+  }
+  .buy-button:hover {
+    box-shadow: 0 0 30px #00ffffee;
+    transform: scale(1.1);
+    color: #fff;
+  }
+
+  /* Suggestion box */
+  .suggestion-box {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ccccaa;
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-top: 50px;
+    color: #99ffffcc;
+  }
+
+  .suggestion-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: #00ffffcc;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  .suggestion-category {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #66ffffcc;
+  }
+
+  .suggestion-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 8px;
+    color: #aaffffcc;
+  }
+  .suggestion-list li {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
+  .important-notice {
+    background-color: rgba(255, 30, 30, 0.1);
+    border: 1.5px solid #ff1e1ecc;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-top: 50px;
+    color: #ff5555cc;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
+
+  .terms {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #559999aa;
+    text-align: center;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Product menu by X Dev">
+    <div class="logo" aria-label="Logo X">X</div>
+    <div class="seller-name">X Dev (Discord: freezesstrike)</div>
+    <div class="title">PRODUCT MENU</div>
+
+    <div class="products-wrapper" tabindex="0" aria-label="Scrollable products list">
+      <a href="https://discord.gg/zxgp6MX68v" target="_blank" class="product" role="group" aria-labelledby="p1-name">
+        <div class="product-header">
+          <div id="p1-name" class="product-name">Regular Script</div>
+          <div class="product-price">$10</div>
+        </div>
+        <div class="product-description">
+          Simple script, decent undetectability, 1-week key.
+          (PVP or AUTO FARM)
+        </div>
+        <div class="buy-button" aria-label="Buy Regular Script for ten dollars">Buy Now</div>
+      </a>
+
+      <a href="https://discord.gg/zxgp6MX68v" target="_blank" class="product" role="group" aria-labelledby="p2-name">
+        <div class="product-header">
+          <div id="p2-name" class="product-name">Premium Script</div>
+          <div class="product-price">$25</div>
+        </div>
+        <div class="product-description">
+          Superior undetectability, 1-month key.
+          (PVP or AUTO FARM)
+        </div>
+        <div class="buy-button" aria-label="Buy Premium Script for twenty five dollars">Buy Now</div>
+      </a>
+
+      <a href="https://discord.gg/zxgp6MX68v" target="_blank" class="product" role="group" aria-labelledby="p3-name">
+        <div class="product-header">
+          <div id="p3-name" class="product-name">Executor Zenith</div>
+          <div class="product-price">$10</div>
+        </div>
+        <div class="product-description">
+          1-week Roblox executor, fully undetected, 24/7 support.
+        </div>
+        <div class="buy-button" aria-label="Buy Executor Zenith for ten dollars">Buy Now</div>
+      </a>
+
+      <a href="https://discord.gg/zxgp6MX68v" target="_blank" class="product" role="group" aria-labelledby="p4-name">
+        <div class="product-header">
+          <div id="p4-name" class="product-name">Zenith 1 Month + Free Aged Roblox Account</div>
+          <div class="product-price">$25</div>
+        </div>
+        <div class="product-description">
+          One month of Zenith plus a free aged Roblox account, premium performance.
+        </div>
+        <div class="buy-button" aria-label="Buy Zenith plus account for twenty five dollars">Buy Now</div>
+      </a>
+
+      <a href="https://discord.gg/zxgp6MX68v" target="_blank" class="product" role="group" aria-labelledby="p5-name">
+        <div class="product-header">
+          <div id="p5-name" class="product-name">Potassium Executor Lifetime</div>
+          <div class="product-price">$35</div>
+        </div>
+        <div class="product-description">
+          Lifetime access, ultimate reliability and performance.
+        </div>
+        <div class="buy-button" aria-label="Buy Potassium Executor Lifetime for thirty five dollars">Buy Now</div>
+      </a>
+    </div>
+
+    <div class="suggestion-box" aria-label="Suggested Executors">
+      <div class="suggestion-title">SUGGESTED EXECUTORS</div>
+
+      <div class="suggestion-category">Mobile:</div>
+      <ul class="suggestion-list">
+        <li>Arceus X</li>
+        <li>Delta</li>
+        <li>Codex</li>
+      </ul>
+
+      <div class="suggestion-category">PC:</div>
+      <ul class="suggestion-list">
+        <li>Wave (Paid)</li>
+        <li>AWP (Paid)</li>
+        <li>Potassium (Paid)</li>
+        <li>Zenith (Paid)</li>
+        <li>Swift (Free)</li>
+        <li>Volcano (Free)</li>
+      </ul>
+    </div>
+
+    <div class="important-notice" aria-label="Important usage notice">
+      <strong>Important Notice:</strong><br />
+      By using this script, you agree NOT to share, sell, or rent it. Violations lead to instant ban.<br />
+      Use at your own risk — avoid your main account. Updates may come without notice.<br />
+      For support or to report abuse, open a ticket and provide license details.<br />
+      Respect rules; no reverse engineering.
+    </div>
+
+    <div class="terms">
+      All sales are final. Check compatibility before purchase.<br />
+      Contact: <strong>X Dev</strong> (Discord username: <em>freezesstrike</em>)
+    </div>
+  </div>
+</body>
+</html>
